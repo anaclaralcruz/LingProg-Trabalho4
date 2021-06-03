@@ -6,6 +6,8 @@
 
 /* "Paciente.h" ------------------------------------------------- */
 /* Inicializa a classe Paciente */
+#ifndef PACIENTE_H
+#define PACIENTE_H
 
 #include <string>
 
@@ -26,7 +28,10 @@ class Paciente {
 
         string getNome();
 
+        virtual string getInformacaoParticular() const = 0;
+
     private:
         string nome, genero;
         int idade;
 };
+#endif

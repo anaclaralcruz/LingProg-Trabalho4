@@ -12,6 +12,8 @@
 #include <iostream>
 
 #include "Arvore.cpp"
+#include "PacienteGinecologico.h"
+#include "PacientePediatrico.h"
 
 using namespace std ;
 
@@ -19,26 +21,33 @@ int main (){
 
     cout << "0\n" ;
 
-    Paciente* caca = new Paciente ("Ana Clara", "F", 21);
-    Paciente* dede = new Paciente ("Maria Helena", "F", 23);
-    Paciente* patr = new Paciente ("Patricia", "F", 56);
-    Paciente* edua  = new Paciente ("Eduardo", "M", 57);
+    Paciente *paciente1;
+    Paciente *paciente2;
+    paciente1 = new PacienteGinecologico("Ana Clara", "F", 21, "pilula");
+    paciente2 = new PacientePediatrico("Ana Clara", "F", 21, "Patricia");
+    //paciente = &pacienteGinecologico;
+    //Paciente caca = new PacienteGinecologico("Ana Clara", "F", 21, "pilula");
+   // PacienteGinecologico* dede = new PacienteGinecologico ("Maria Helena", "F", 23, "coito interrompido");
+   // PacienteGinecologico* patr = new PacienteGinecologico ("Patricia", "F", 56, "diafragma");
+   // PacienteGinecologico* edua  = new PacienteGinecologico ("Eduardo", "M", 57, "camisinha");
 
     cout << "1\n" ;
 
-    Arvore <Paciente> arvoreDePacientes(caca, NULL, NULL);
+    cout << paciente1->getInformacaoParticular() << endl;
+    cout << paciente2->getInformacaoParticular() << endl;
+    //Arvore <PacienteGinecologico> arvoreDePacientes(caca, NULL, NULL);
 
 
-    arvoreDePacientes += caca ;
-    arvoreDePacientes += dede ;
-    arvoreDePacientes += patr ;
-    arvoreDePacientes += edua ;
+    //arvoreDePacientes += caca ;
+    //arvoreDePacientes += dede ;
+    //arvoreDePacientes += patr ;
+    //arvoreDePacientes += edua ;
 
     //cout << arvoreDePacientes ;
     //cout << "Ana Clara: " << arvoreDePacientes.getNomeDoNo() << endl;
     //cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
     //cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl;
-    cout << "PATRICIA:" << (arvoreDePacientes("Patricia") ? arvoreDePacientes("Patricia")->getNomeDoNo() : "NULL")<< endl;
+    //cout << "PATRICIA:" << (arvoreDePacientes("Patricia") ? arvoreDePacientes("Patricia")->getNomeDoNo() : "NULL")<< endl;
 
     cout << endl;
 }
