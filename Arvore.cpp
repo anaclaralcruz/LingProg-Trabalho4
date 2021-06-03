@@ -9,6 +9,7 @@
 
 #include "Arvore.h"
 
+
 using namespace std ;
 
 
@@ -51,6 +52,17 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
   }
   
   return NULL;
+}
+
+template <class T>
+Arvore<T>* Arvore<T>::operator()(string nome) {
+  if (nome < this->getNomeDoNo()){
+    return filhoEsquerda  == NULL ? NULL : (*filhoDireita)(nome);
+  }
+  if (nome > this->getNomeDoNo()){
+    return filhoDireita == NULL ? NULL : (*filhoDireita)(nome);
+  }
+  return this;
 }
 
 template <class T>

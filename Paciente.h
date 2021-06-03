@@ -13,13 +13,16 @@ using namespace std;
 
 class Paciente {
     public:
+        // Construtor
         Paciente(string, string, int);
 
+        // Operadores
         bool operator<(Paciente &);
         bool operator>(Paciente &);
         bool operator==(Paciente &);
 
         string getNome();
+
     private:
         string nome, genero;
         int idade;

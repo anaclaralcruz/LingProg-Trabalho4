@@ -23,6 +23,7 @@ class Arvore {
 
     // Operadores
     Arvore* operator+=(T *);
+    Arvore* operator()(string);
 
     string getNomeDoNo();
     string getNomeDireito();
