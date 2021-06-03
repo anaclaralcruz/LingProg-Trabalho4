@@ -79,20 +79,7 @@ Arvore<T>* Arvore<T>::operator()(string nome) {
   return this;
 }
 
-template <class T>
-string Arvore<T>::getNomeDireito() {
-  if (filhoDireita == NULL)
-    return "EH NULO IRMAO";
-  return this->filhoDireita->no->getNome();
-}
-
-template <class T>
-string Arvore<T>::getNomeEsquerdo() {
-  if (filhoEsquerda == NULL)
-    return "EH NULO IRMAO";
-  return this->filhoEsquerda->no->getNome();
-}
-
+// Descobrir nome do no
 template <class T>
 string Arvore<T>::getNomeDoNo() {
   return this->no->getNome();

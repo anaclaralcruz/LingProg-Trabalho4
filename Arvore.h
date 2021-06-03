@@ -30,8 +30,6 @@ class Arvore {
     Arvore* operator()(string);
 
     string getNomeDoNo();
-    string getNomeDireito();
-    string getNomeEsquerdo();
 
   private:
     T* no;

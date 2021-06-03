@@ -34,11 +34,11 @@ int main (){
     arvoreDePacientes += patr ;
     arvoreDePacientes += edua ;
 
-    cout << arvoreDePacientes ;
+    //cout << arvoreDePacientes ;
     //cout << "Ana Clara: " << arvoreDePacientes.getNomeDoNo() << endl;
     //cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
     //cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl;
-    //cout << "NULO:" << (arvoreDePacientes("Pedro Sampaio") ? arvoreDePacientes("Pedro Sampaio")->getNomeDoNo() : "NULL")<< endl;
+    cout << "PATRICIA:" << (arvoreDePacientes("Patricia") ? arvoreDePacientes("Patricia")->getNomeDoNo() : "NULL")<< endl;
 
     cout << endl;
 }
