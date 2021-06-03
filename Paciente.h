@@ -15,6 +15,10 @@ class Paciente {
     public:
         Paciente(string, string, int);
 
+        bool operator<(Paciente &);
+        bool operator>(Paciente &);
+        bool operator==(Paciente &);
+
         string getNome();
     private:
         string nome, genero;

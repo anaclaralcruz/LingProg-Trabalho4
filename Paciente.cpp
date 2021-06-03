@@ -20,3 +20,24 @@ Paciente::Paciente (string novoNome, string novoGenero, int novaIdade) {
 string Paciente::getNome(){
     return this->nome;
 }
+
+// Operadores
+bool Paciente::operator<(Paciente & pacienteDireita) {
+  if (this->nome < pacienteDireita.nome)
+    return true;
+  return false;
+}
+
+// Operador >
+bool Paciente::operator>(Paciente & pacienteDireita) {
+  if (this->nome > pacienteDireita.nome)
+    return true;
+  return false;
+}
+
+// Operador ==
+bool Paciente::operator==(Paciente & pacienteDireita) {
+  if (this->nome == pacienteDireita.nome)
+    return true;
+  return false;
+}

@@ -34,7 +34,7 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
     this->no = novoNo;
     return this;
   }
-  if (novoNo->getNome() > this->no->getNome()) {
+  if (novoNo > this->no) {
     if (filhoDireita == NULL){
       filhoDireita = new Arvore<T>(novoNo, NULL, NULL);
       return filhoDireita;
@@ -42,7 +42,7 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
     return (*filhoDireita)+=novoNo;
   }
 
-  if (novoNo->getNome() < this->no->getNome()) {
+  if (novoNo < this->no) {
     if (filhoEsquerda == NULL) {
       filhoEsquerda = new Arvore<T>(novoNo, NULL, NULL);
       return filhoEsquerda;
@@ -51,20 +51,6 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
   }
   
   return NULL;
-
-  /*  if (novoNo->getNome() < this->no->getNome()) {
-      if (filhoDireita == NULL){
-        filhoDireita = new Arvore<T>(novoNo, NULL, NULL);
-        return filhoDireita;
-      }
-      return (*filhoDireita)+=novoNo;
-    }
-
-    if (filhoEsquerda == NULL) {
-      filhoEsquerda = new Arvore<T>(novoNo, NULL, NULL);
-      return filhoEsquerda;
-    }
-    return (*filhoEsquerda) += novoNo;*/
 }
 
 template <class T>
