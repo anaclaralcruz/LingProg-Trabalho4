@@ -14,6 +14,10 @@
 
 template <class T>
 class Arvore {
+  // Operadores globais
+  template <class O>
+  friend ostream &operator<<(ostream&, const Arvore<O> &);
+
   public:
     // Construtor
     Arvore(T *, Arvore * , Arvore * );
@@ -29,10 +33,8 @@ class Arvore {
     string getNomeDireito();
     string getNomeEsquerdo();
 
-
-     T* no;
-
   private:
+    T* no;
     Arvore* filhoDireita;
     Arvore* filhoEsquerda;
    

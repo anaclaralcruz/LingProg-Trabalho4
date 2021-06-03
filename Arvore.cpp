@@ -12,6 +12,18 @@
 
 using namespace std ;
 
+// Operador de impressao
+template<class O>
+ostream &operator<<(ostream &output, const Arvore<O> &arvore){
+  if (arvore.filhoEsquerda != NULL){
+    output<<(*arvore.filhoEsquerda);
+  }
+  output << *arvore.no;
+  if (arvore.filhoDireita != NULL){
+    output << (*arvore.filhoDireita);
+  }
+  return output;
+}
 
 // Construtor
 template <class T>
@@ -29,6 +41,7 @@ Arvore<T>::~Arvore() {
   delete no;
 }
 
+// Operador de adicao
 template <class T>
 Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
   if (this->no == NULL) {
@@ -54,13 +67,14 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
   return NULL;
 }
 
+// Operador de busca
 template <class T>
 Arvore<T>* Arvore<T>::operator()(string nome) {
   if (nome < this->getNomeDoNo()){
-    return filhoEsquerda  == NULL ? NULL : (*filhoDireita)(nome);
+    return filhoEsquerda ? (*filhoDireita)(nome) : NULL;
   }
   if (nome > this->getNomeDoNo()){
-    return filhoDireita == NULL ? NULL : (*filhoDireita)(nome);
+    return filhoDireita ? (*filhoDireita)(nome) : NULL;
   }
   return this;
 }

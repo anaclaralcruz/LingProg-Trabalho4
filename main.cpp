@@ -28,14 +28,17 @@ int main (){
 
     Arvore <Paciente> arvoreDePacientes(caca, NULL, NULL);
 
-    cout << "2\n" ;
+
     arvoreDePacientes += caca ;
     arvoreDePacientes += dede ;
     arvoreDePacientes += patr ;
     arvoreDePacientes += edua ;
 
-    cout << "Ana Clara: " << arvoreDePacientes.getNomeDoNo() << endl;
-    cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
-    cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl; 
+    cout << arvoreDePacientes ;
+    //cout << "Ana Clara: " << arvoreDePacientes.getNomeDoNo() << endl;
+    //cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
+    //cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl;
+    //cout << "NULO:" << (arvoreDePacientes("Pedro Sampaio") ? arvoreDePacientes("Pedro Sampaio")->getNomeDoNo() : "NULL")<< endl;
 
+    cout << endl;
 }

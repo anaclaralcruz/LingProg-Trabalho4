@@ -12,6 +12,9 @@
 using namespace std;
 
 class Paciente {
+    // Operadores globais
+    friend ostream &operator<<(ostream&, Paciente &);
+
     public:
         // Construtor
         Paciente(string, string, int);

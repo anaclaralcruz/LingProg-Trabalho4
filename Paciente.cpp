@@ -8,8 +8,15 @@
 /* Contem os metodos referentes a classe Paciente */
 
 #include "Paciente.h"
+#include <ostream>
 
 using namespace std ;
+
+// Operador de impressao
+ostream &operator<<(ostream &output, Paciente &pacienteOut){
+  output << pacienteOut.nome << "   " << pacienteOut.idade << "   " << pacienteOut.genero << endl;
+  return output;
+}
 
 Paciente::Paciente (string novoNome, string novoGenero, int novaIdade) {
     this->nome = novoNome ;
