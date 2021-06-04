@@ -24,9 +24,10 @@ void Cadastro::insere (Paciente* novoPaciente) {
     *arvoreDePacientes += novoPaciente;
 }
 
-/*Paciente* Cadastro::busca (string nome) {
-    return (*arvoreDePacientes)(nome);
-}*/
+Paciente* Cadastro::busca (string nome) {
+    Arvore<Paciente>* arvore = (*arvoreDePacientes)(nome);
+    return arvore->getNo();
+}
 
 void Cadastro::imprime() {
     cout << *arvoreDePacientes;

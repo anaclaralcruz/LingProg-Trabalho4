@@ -35,7 +35,11 @@ int main (){
     cadastro.insere(jose);
     cadastro.insere(prim);
     cadastro.insere(bruno);
-    cadastro.imprime();
+  //  cadastro.imprime();
+
+    cout << *(cadastro.busca("Ana Clara")) << endl;
+
+
 
 
     //cout << "0\n" ;
