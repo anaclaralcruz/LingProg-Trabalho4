@@ -49,3 +49,7 @@ bool Paciente::operator==(Paciente & pacienteDireita) {
 string Paciente::getNome() {
     return this->nome;
 }
+
+string Paciente::getInformacaoParticular() const {
+  return "nada";
+}

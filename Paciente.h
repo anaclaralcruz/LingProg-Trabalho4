@@ -28,7 +28,7 @@ class Paciente {
 
         string getNome();
 
-        virtual string getInformacaoParticular() const = 0;
+        virtual string getInformacaoParticular() const;
 
     private:
         string nome, genero;

@@ -7,10 +7,14 @@
 /* "Arvore.h" ------------------------------------------------- */
 /* Inicializa a classe Arvore */
 
+#ifndef ARVORE_H
+#define ARVORE_H
 //#include <iostream>
 //#include <iomanip>
-//#include <ostream>
-#include "Paciente.h"
+#include <ostream>
+//#include "Paciente.h"
+
+using namespace std;
 
 template <class T>
 class Arvore {
@@ -20,14 +24,16 @@ class Arvore {
 
   public:
     // Construtor
-    Arvore(T *, Arvore * , Arvore * );
+    Arvore(T *, Arvore<T> * , Arvore<T> *);
 
     // Destrutor
-    ~Arvore();
+    //~Arvore();
 
     // Operadores
     Arvore* operator+=(T *);
     Arvore* operator()(string);
+
+    T* getNo();
 
     string getNomeDoNo();
 
@@ -37,3 +43,4 @@ class Arvore {
     Arvore* filhoEsquerda;
    
 };
+#endif

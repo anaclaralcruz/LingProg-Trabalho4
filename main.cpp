@@ -8,9 +8,11 @@
 /* Funcao principal que contem o menu do programa */
 
 #define OK                      0
+#define ERRO                    1
 
 #include <iostream>
 
+#include "Cadastro.h"
 #include "Arvore.cpp"
 #include "PacienteGinecologico.h"
 #include "PacientePediatrico.h"
@@ -18,23 +20,34 @@
 using namespace std ;
 
 int main (){
+    
+    Paciente* caca = new Paciente ("Ana Clara", "F", 21);
 
-    cout << "0\n" ;
+    //Arvore<Paciente>* arvoreDePacientes = new Arvore<Paciente>(caca,NULL,NULL);
+    Cadastro cadastro (caca);
+    //cout << arvoreDePacientes << endl;
+    //cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
+    //cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl; 
 
-    Paciente *paciente1;
-    Paciente *paciente2;
-    paciente1 = new PacienteGinecologico("Ana Clara", "F", 21, "pilula");
-    paciente2 = new PacientePediatrico("Ana Clara", "F", 21, "Patricia");
+    cadastro.imprime();
+
+
+    //cout << "0\n" ;
+
+    //Paciente *paciente1;
+    //Paciente *paciente2;
+    //paciente1 = new PacienteGinecologico("Ana Clara", "F", 21, "pilula");
+    //paciente2 = new PacientePediatrico("Ana Clara", "F", 21, "Patricia");
     //paciente = &pacienteGinecologico;
     //Paciente caca = new PacienteGinecologico("Ana Clara", "F", 21, "pilula");
    // PacienteGinecologico* dede = new PacienteGinecologico ("Maria Helena", "F", 23, "coito interrompido");
    // PacienteGinecologico* patr = new PacienteGinecologico ("Patricia", "F", 56, "diafragma");
    // PacienteGinecologico* edua  = new PacienteGinecologico ("Eduardo", "M", 57, "camisinha");
 
-    cout << "1\n" ;
+    //cout << "1\n" ;
 
-    cout << paciente1->getInformacaoParticular() << endl;
-    cout << paciente2->getInformacaoParticular() << endl;
+    //cout << paciente1->getInformacaoParticular() << endl;
+    //cout << paciente2->getInformacaoParticular() << endl;
     //Arvore <PacienteGinecologico> arvoreDePacientes(caca, NULL, NULL);
 
 

@@ -7,6 +7,9 @@
 /* "Arvore.cpp" ------------------------------------------------- */
 /* Contem os metodos referentes a classe Arvore */
 
+#ifndef ARVORE_CPP
+#define ARVORE_CPP
+
 #include "Arvore.h"
 
 
@@ -27,19 +30,19 @@ ostream &operator<<(ostream &output, const Arvore<O> &arvore){
 
 // Construtor
 template <class T>
-Arvore<T>::Arvore(T* n , Arvore* ponteiroDireita , Arvore* ponteiroEsquerda) {
+Arvore<T>::Arvore(T* n , Arvore<T>* ponteiroDireita , Arvore<T>* ponteiroEsquerda) {
   this->no = n;
   this->filhoDireita = ponteiroDireita;
   this->filhoEsquerda = ponteiroEsquerda;
 }
 
 // Destrutor
-template <class T>
+/*template <class T>
 Arvore<T>::~Arvore() {
   delete filhoEsquerda;
   delete filhoDireita;
   delete no;
-}
+} */
 
 // Operador de adicao
 template <class T>
@@ -79,8 +82,15 @@ Arvore<T>* Arvore<T>::operator()(string nome) {
   return this;
 }
 
+// Devolver o no
+template <class T>
+T* Arvore<T>::getNo() {
+  return this->no;
+}
+
 // Descobrir nome do no
 template <class T>
 string Arvore<T>::getNomeDoNo() {
   return this->no->getNome();
 }
+#endif
