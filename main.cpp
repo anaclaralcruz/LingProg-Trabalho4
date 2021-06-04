@@ -84,7 +84,7 @@ int main() {
 
                 paciente = new PacientePediatrico(nome, genero, idade, nomeResponsavel);
                 cout << endl << "Adicionando o seguinte paciente: " << endl;
-                cout << *paciente << "\t" <<paciente->getInformacaoParticular() << endl;
+                cout << *paciente << paciente->getInformacaoParticular() << endl;
                 try{
                  cadastro->insere(paciente);
                 }catch(exception &e){
