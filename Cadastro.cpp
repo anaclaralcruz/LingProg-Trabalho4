@@ -11,26 +11,31 @@
 #define ERRO 1
 
 #include <iostream>
+#include <exception>
+#include "Erros.h"
 #include "Cadastro.h"
 
 using namespace std;
 
-Cadastro::Cadastro (Paciente* noInicial) {
-    arvoreDePacientes = new Arvore<Paciente> (noInicial, NULL, NULL);
+Cadastro::Cadastro () {
+    arvoreDePacientes = new Arvore<Paciente> (NULL, NULL, NULL);
 };
 
 
-int Cadastro::insere (Paciente* novoPaciente) {
-    if (*arvoreDePacientes += novoPaciente)
-        return 1;
-    return 0;
+void Cadastro::insere (Paciente* novoPaciente) noexcept(false){
+    Arvore<Paciente> *arvore = *arvoreDePacientes += novoPaciente;
+    if (arvore == NULL)
+        throw PacienteJaCadastradoException();
+    else
+        cout << "Paciente adicionado com sucesso!" << endl ;
 }
 
-Paciente* Cadastro::busca (string nome) {
+void Cadastro::busca (string nome) noexcept(false) {
     Arvore<Paciente>* arvore = (*arvoreDePacientes)(nome);
-    if ((*arvoreDePacientes)(nome) == NULL)
-        return NULL;
-    return arvore->getNo();
+    if (arvore == NULL)
+        throw PacientNaoEncontradoException();
+    else
+        cout << "Paciente encontrado!" << endl << *(arvore->getNo()) << endl ;
 }
 
 void Cadastro::imprime() {

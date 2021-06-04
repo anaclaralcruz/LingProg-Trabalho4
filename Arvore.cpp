@@ -46,6 +46,10 @@ Arvore<T>::~Arvore() {
 // Operador de adicao
 template <class T>
 Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
+  if (this->no == NULL) {
+    this->no = novoNo;
+    return this;
+  }
   if (novoNo->getNome() > this->no->getNome()) {
     if (filhoDireita == NULL){
       filhoDireita = new Arvore<T>(novoNo, NULL, NULL);

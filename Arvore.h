@@ -24,7 +24,7 @@ class Arvore {
 
   public:
     // Construtor
-    Arvore(T *, Arvore<T> * , Arvore<T> *);
+    Arvore(T *paciente = NULL, Arvore<T> * arvore1 = NULL, Arvore<T> *arvore2 = NULL);
 
     // Destrutor
     //~Arvore();

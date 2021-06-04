@@ -7,17 +7,20 @@
 /* "Cadastro.h" ------------------------------------------------- */
 /* Inicializa a classe Cadastro */
 
+#include <exception>
+
 #include "Arvore.cpp"
 #include "Paciente.h"
 
 using namespace std;
 
+
 class Cadastro{
   public:
-    Cadastro(Paciente*);
+    Cadastro();
 
-    int insere(Paciente*);
-    Paciente* busca(string);
+    void insere(Paciente*) noexcept(false);
+    void busca(string) noexcept(false);
     void imprime();
 
   private:
