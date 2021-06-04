@@ -12,7 +12,6 @@
 
 #include "Arvore.h"
 
-
 using namespace std ;
 
 // Operador de impressao
@@ -47,11 +46,7 @@ Arvore<T>::~Arvore() {
 // Operador de adicao
 template <class T>
 Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
-  if (this->no == NULL) {
-    this->no = novoNo;
-    return this;
-  }
-  if (novoNo > this->no) {
+  if (novoNo->getNome() > this->no->getNome()) {
     if (filhoDireita == NULL){
       filhoDireita = new Arvore<T>(novoNo, NULL, NULL);
       return filhoDireita;
@@ -59,7 +54,7 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
     return (*filhoDireita)+=novoNo;
   }
 
-  if (novoNo < this->no) {
+  if (novoNo->getNome() < this->no->getNome()) {
     if (filhoEsquerda == NULL) {
       filhoEsquerda = new Arvore<T>(novoNo, NULL, NULL);
       return filhoEsquerda;

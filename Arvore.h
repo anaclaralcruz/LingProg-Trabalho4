@@ -36,6 +36,8 @@ class Arvore {
     T* getNo();
 
     string getNomeDoNo();
+    string getNomeDireito();
+    string getNomeEsquerdo();
 
   private:
     T* no;

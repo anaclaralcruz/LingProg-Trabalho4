@@ -16,8 +16,8 @@ class Cadastro{
   public:
     Cadastro(Paciente*);
 
-   // int insere(Paciente*);
-   // Paciente* busca(string);
+    void insere(Paciente*);
+    Paciente* busca(string);
     void imprime();
 
   private:

@@ -22,6 +22,9 @@ using namespace std ;
 int main (){
     
     Paciente* caca = new Paciente ("Ana Clara", "F", 21);
+    Paciente* prim = new Paciente ("Adriano", "F", 10);
+    Paciente* jose = new Paciente ("Joelson", "M", 23);
+    Paciente* bruno = new Paciente ("Bruno", "M", 100);
 
     //Arvore<Paciente>* arvoreDePacientes = new Arvore<Paciente>(caca,NULL,NULL);
     Cadastro cadastro (caca);
@@ -29,6 +32,9 @@ int main (){
     //cout << "Maria Helena: " << arvoreDePacientes.getNomeDireito() << endl;
     //cout << "NULL: " << arvoreDePacientes.getNomeEsquerdo() << endl; 
 
+    cadastro.insere(jose);
+    cadastro.insere(prim);
+    cadastro.insere(bruno);
     cadastro.imprime();
 
 
