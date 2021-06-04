@@ -69,12 +69,18 @@ Arvore<T>* Arvore<T>::operator+=(T* novoNo) {
 template <class T>
 Arvore<T>* Arvore<T>::operator()(string nome) {
   if (nome < this->getNomeDoNo()){
-    return filhoEsquerda ? (*filhoDireita)(nome) : NULL;
+    if (!filhoEsquerda)
+      return NULL;
+    return (*filhoEsquerda)(nome);
   }
   if (nome > this->getNomeDoNo()){
-    return filhoDireita ? (*filhoDireita)(nome) : NULL;
+    if (!filhoDireita)
+      return NULL;
+    return (*filhoDireita)(nome);
   }
-  return this;
+  if (nome == this->getNomeDoNo())
+    return this;
+  return NULL;
 }
 
 // Devolver o no

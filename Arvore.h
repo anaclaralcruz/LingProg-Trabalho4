@@ -36,13 +36,10 @@ class Arvore {
     T* getNo();
 
     string getNomeDoNo();
-    string getNomeDireito();
-    string getNomeEsquerdo();
-
   private:
     T* no;
-    Arvore* filhoDireita;
-    Arvore* filhoEsquerda;
+    Arvore* filhoDireita = NULL;
+    Arvore* filhoEsquerda = NULL;
    
 };
 #endif

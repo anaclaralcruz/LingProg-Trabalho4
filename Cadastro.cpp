@@ -20,12 +20,16 @@ Cadastro::Cadastro (Paciente* noInicial) {
 };
 
 
-void Cadastro::insere (Paciente* novoPaciente) {
-    *arvoreDePacientes += novoPaciente;
+int Cadastro::insere (Paciente* novoPaciente) {
+    if (*arvoreDePacientes += novoPaciente)
+        return 1;
+    return 0;
 }
 
 Paciente* Cadastro::busca (string nome) {
     Arvore<Paciente>* arvore = (*arvoreDePacientes)(nome);
+    if ((*arvoreDePacientes)(nome) == NULL)
+        return NULL;
     return arvore->getNo();
 }
 

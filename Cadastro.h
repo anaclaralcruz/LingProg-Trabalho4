@@ -16,7 +16,7 @@ class Cadastro{
   public:
     Cadastro(Paciente*);
 
-    void insere(Paciente*);
+    int insere(Paciente*);
     Paciente* busca(string);
     void imprime();
 
